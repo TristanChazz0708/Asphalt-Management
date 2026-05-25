@@ -1,0 +1,23 @@
+{
+  "name": "TC Construction Pave Ops",
+  "short_name": "Pave Ops",
+  "start_url": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#151b22",
+  "theme_color": "#151b22",
+  "icons": [
+    {
+      "src": "assets/logo-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/logo-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

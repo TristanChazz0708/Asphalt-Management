@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Titan Consolidated | Pave Ops</title>
-    <meta name="theme-color" content="#151b22">
+    <!-- Updated theme color for mobile browsers -->
+    <meta name="theme-color" content="#0d1b2a">
     <link rel="manifest" href="manifest.json">
     
     <!-- DOMAIN LOCK SECURITY -->
@@ -22,7 +23,7 @@
             const isAllowed = allowedDomains.some(domain => currentDomain.includes(domain));
             if (!isAllowed) {
                 window.stop(); 
-                document.documentElement.innerHTML = "<head><title>Access Denied</title></head><body style='background:#151b22; color:#e11d48; display:flex; flex-direction:column; align-items:center; justify-content:center; height:100vh; font-family:sans-serif; margin:0; text-align:center; padding:20px;'><h1 style='font-weight:900; letter-spacing:2px; text-transform:uppercase;'>Security Breach:<br>Unauthorized Host</h1><p style='color:#f8fafc; margin-top:10px;'>This software is locked to Titan Digital Labs infrastructure. Access Denied.</p></body>";
+                document.documentElement.innerHTML = "<head><title>Access Denied</title></head><body style='background:#0d1b2a; color:#e11d48; display:flex; flex-direction:column; align-items:center; justify-content:center; height:100vh; font-family:sans-serif; margin:0; text-align:center; padding:20px;'><h1 style='font-weight:900; letter-spacing:2px; text-transform:uppercase;'>Security Breach:<br>Unauthorized Host</h1><p style='color:#f8fafc; margin-top:10px;'>This software is locked to Titan Digital Labs infrastructure. Access Denied.</p></body>";
                 throw new Error("Security Override: Execution Halted.");
             }
         })();
@@ -59,21 +60,22 @@
         ::-webkit-scrollbar-track { background: var(--bg-app); }
         ::-webkit-scrollbar-thumb { background: var(--theme-accent); border-radius: 10px; }
 
+        /* STEFANUTTI STOCKS COASTAL THEME */
         :root {
-            --bg-app: #151b22; 
-            --bg-panel: #1e2630; 
-            --bg-input: #0d1117; 
-            --border-color: #2d3745; 
-            --text-main: #f8fafc; 
-            --text-muted: #94a3b8; 
-            --theme-accent: #1f9d86; 
-            --theme-accent-hover: #19826f; 
-            --btn-text: #ffffff;
+            --bg-app: #0d1b2a;             /* Deep Navy Base */
+            --bg-panel: #1b263b;           /* Lighter Navy Panel */
+            --bg-input: #0a121d;           /* Dark Input Background */
+            --border-color: #415a77;       /* Blue-Grey Border */
+            --text-main: #f8fafc;          /* White Text */
+            --text-muted: #8da3c2;         /* Muted Blue-Grey Text */
+            --theme-accent: #ffc107;       /* Stefanutti Yellow/Gold */
+            --theme-accent-hover: #e0a800; /* Darker Yellow Hover */
+            --btn-text: #0d1b2a;           /* Dark Navy Text for contrast on yellow buttons */
         }
 
         .camera-square { width: 100%; padding-top: 100%; position: relative; overflow: hidden; border-radius: 12px; background: #000; border: 1px solid var(--border-color); }
         .camera-square video { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: auto; height: 100%; min-width: 100%; min-height: 100%; object-fit: cover; }
-        .finder { position: absolute; top: 50%; left: 50%; width: 70%; height: 70%; transform: translate(-50%,-50%); box-sizing: border-box; pointer-events: none; border: 2px solid rgba(31, 157, 134, 0.5); border-radius: 6px; box-shadow: 0 0 0 9999px rgba(0,0,0,0.6) inset; }
+        .finder { position: absolute; top: 50%; left: 50%; width: 70%; height: 70%; transform: translate(-50%,-50%); box-sizing: border-box; pointer-events: none; border: 2px solid rgba(255, 193, 7, 0.5); border-radius: 6px; box-shadow: 0 0 0 9999px rgba(0,0,0,0.6) inset; }
         .finder::before, .finder::after, .finder span::before, .finder span::after { content: ""; position: absolute; background: var(--theme-accent); border-radius: 2px; }
         .finder::before { top: -2px; left: -2px; width: 28px; height: 4px; }
         .finder::after { bottom: -2px; right: -2px; width: 28px; height: 4px; }
@@ -90,7 +92,7 @@
         <h2 class="text-2xl font-black uppercase tracking-widest text-themetext mb-2">Pave Ops Access</h2>
         <p class="text-thememuted mb-6 text-sm">Enter your enterprise license key to unlock the environment.</p>
         <input type="text" id="licenseKey" placeholder="XXXX-XXXX-XXXX-XXXX" class="w-full bg-themeinput border border-themeborder rounded-xl p-4 text-themeaccent text-center font-code tracking-widest mb-6 focus:ring-2 focus:ring-themeaccent outline-none shadow-inner transition-all">
-        <button id="verifyBtn" class="w-full bg-themeaccent hover:bg-themehover text-themebtntext font-black tracking-widest uppercase py-4 px-4 rounded-xl transition-all shadow-[0_0_20px_rgba(31,157,134,0.4)]">Verify & Unlock</button>
+        <button id="verifyBtn" class="w-full bg-themeaccent hover:bg-themehover text-themebtntext font-black tracking-widest uppercase py-4 px-4 rounded-xl transition-all shadow-[0_0_20px_rgba(255,193,7,0.4)]">Verify & Unlock</button>
         <p id="authError" class="text-rose-500 font-code text-xs mt-4 hidden uppercase tracking-wide">Invalid or Refunded License Key.</p>
     </div>
 
@@ -122,7 +124,7 @@
             <canvas id="preview" class="hidden"></canvas>
             
             <div class="flex flex-col gap-3">
-                <button id="openInApp" class="w-full bg-themeaccent hover:bg-themehover text-themebtntext font-black uppercase tracking-widest py-4 rounded-xl transition-all shadow-[0_0_15px_rgba(31,157,134,0.3)]">Initialize Scanner</button>
+                <button id="openInApp" class="w-full bg-themeaccent hover:bg-themehover text-themebtntext font-black uppercase tracking-widest py-4 rounded-xl transition-all shadow-[0_0_15px_rgba(255,193,7,0.3)]">Initialize Scanner</button>
                 <button id="capture" class="hidden w-full bg-themeaccent hover:bg-themehover text-themebtntext font-black uppercase tracking-widest py-4 rounded-xl transition-all">Extract Note Data</button>
                 <button id="closeInApp" class="hidden w-full bg-transparent border border-themeborder text-themetext hover:bg-themeinput font-bold uppercase tracking-widest py-3 rounded-xl transition-all">Abort Scan</button>
             </div>
@@ -248,7 +250,7 @@
             
             <div class="flex gap-3 pt-4 border-t border-themeborder">
                 <button id="cancelModalBtn" class="flex-1 bg-transparent border border-themeborder text-themetext py-3 rounded-xl text-xs font-bold uppercase tracking-widest hover:bg-themeinput transition-colors">Discard</button>
-                <button id="calcAndSaveBtn" class="flex-1 bg-themeaccent text-themebtntext py-3 rounded-xl text-xs font-bold uppercase tracking-widest shadow-[0_0_15px_rgba(31,157,134,0.4)] hover:shadow-[0_0_25px_rgba(31,157,134,0.6)] transition-all">Log Data</button>
+                <button id="calcAndSaveBtn" class="flex-1 bg-themeaccent text-themebtntext py-3 rounded-xl text-xs font-bold uppercase tracking-widest shadow-[0_0_15px_rgba(255,193,7,0.4)] hover:shadow-[0_0_25px_rgba(255,193,7,0.6)] transition-all">Log Data</button>
             </div>
         </div>
     </div>
